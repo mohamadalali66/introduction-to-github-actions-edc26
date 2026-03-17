@@ -1,6 +1,9 @@
 name: Workflow of exercise 3
 run-name: Third workflow
 
+permissions: # Optional
+  contents: read
+  
 # Events triggering the workflow
 on:
   push:
