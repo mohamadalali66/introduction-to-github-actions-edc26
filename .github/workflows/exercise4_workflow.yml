@@ -68,5 +68,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install actionlint
+        run: |
+          curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/master/install.sh | sh
+
       - name: Run actionlint
-        run: actionlint
+        run: ./actionlint
