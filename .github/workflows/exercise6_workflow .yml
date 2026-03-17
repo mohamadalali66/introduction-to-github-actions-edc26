@@ -30,7 +30,7 @@ jobs:
           pandoc --template eisvogel exercises.md -o exercises.pdf
 
       - name: Upload exercise PDF
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: exercises-pdf
           path: exercises.pdf
@@ -46,8 +46,8 @@ jobs:
           fi
 
       - name: Upload slides PDF (optional)
-        if: steps.convert_slides.outcome == 'success'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: slides-pdf
           path: slides.pdf
+        if: steps.convert_slides.outcome == 'success' # Upload only if slides.pdf was created
