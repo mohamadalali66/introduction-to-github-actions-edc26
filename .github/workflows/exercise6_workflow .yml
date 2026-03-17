@@ -27,6 +27,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc
 
+      - name: Download eisvogel template
+        run: |
+          mkdir -p ~/.pandoc/templates
+          curl -L -o ~/.pandoc/templates/eisvogel.latex https://raw.githubusercontent.com/WZBSocialScienceCenter/eisvogel/master/eisvogel.latex
+
       - name: Convert exercise.md to PDF
         run: |
           pandoc --template eisvogel exercises.md -o exercises.pdf
