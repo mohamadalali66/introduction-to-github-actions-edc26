@@ -30,7 +30,7 @@ jobs:
           pandoc --template eisvogel exercises.md -o exercises.pdf
 
       - name: Upload exercise PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: exercises-pdf
           path: exercises.pdf
@@ -46,7 +46,7 @@ jobs:
           fi
 
       - name: Upload slides PDF (optional)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: slides-pdf
           path: slides.pdf
