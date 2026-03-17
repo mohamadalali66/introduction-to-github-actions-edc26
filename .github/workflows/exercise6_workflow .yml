@@ -22,10 +22,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Pandoc
+      - name: Install Pandoc and LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-extra
 
       - name: Download eisvogel template
         run: |
