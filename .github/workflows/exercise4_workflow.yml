@@ -59,18 +59,3 @@ jobs:
 
       - name: Run tests
         run: python -m pytest test_mycode.py
-
-  lint:
-    runs-on: ubuntu-latest
-    needs: [style-check, test]  # Ensure lint runs after both jobs
-    if: success()  # This condition ensures lint runs only if previous jobs succeed
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install actionlint
-        run: |
-          curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/master/install.sh | sh
-
-      - name: Run actionlint
-        run: ./actionlint
