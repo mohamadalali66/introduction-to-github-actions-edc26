@@ -27,7 +27,7 @@ jobs:
           echo "${MyVariable}"
           echo "${{ env.AnotherVariable }}"
           echo "${{ secrets.GITHUB_TOKEN }}"
-          echo "${GITHUB_TOKEN}"
+          echo "${{ github.token }}"
 
       - name: Set secret value to environment variable
         run: echo "MY_SECRET_VALUE=${{ secrets.MYSECRET }}" >> $GITHUB_ENV
